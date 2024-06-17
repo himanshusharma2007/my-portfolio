@@ -5,33 +5,87 @@ import {
   Linkedin,
   Twitch,
   Twitter,
-  
 } from "lucide-react";
 import avtarImg from "../assets/images/download.png";
+import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
+import { TextPlugin } from "gsap/all";
+import PhotoBorder from "../components/PhotoBorder";
+
 
 const Home = () => {
+  const textRef = useRef(null);
+  useEffect(() => {
+    gsap.registerPlugin(TextPlugin);
+
+    const strings = [
+      "Himanshu Sharma",
+      "a Full Stack Developer",
+      "a React Developer",
+      "a UI/UX Designer",
+    ];
+
+    const durationPerLetter = 0.12; // Adjust this value for speed
+    const delayBetweenStrings = 1.3; // Adjust this value for delay between animations
+
+    const tl = gsap.timeline({ repeat: -1 });
+
+    strings.forEach((string, index) => {
+      // Type each letter of the string
+      for (let i = 1; i <= string.length; i++) {
+        tl.to(textRef.current, {
+          duration: durationPerLetter,
+          text: string.slice(0, i),
+          ease: "none",
+        });
+      }
+
+      // Add a delay after typing the full string
+      tl.to({}, { duration: delayBetweenStrings });
+
+      // Delete each letter of the string
+      for (let i = string.length; i >= 0; i--) {
+        tl.to(textRef.current, {
+          duration: durationPerLetter,
+          text: string.slice(0, i),
+          ease: "none",
+        });
+      }
+
+      // Add a delay after deleting the string
+      tl.to({}, { duration: delayBetweenStrings });
+    });
+  }, []);
+
   return (
-    <div className=" text-white min-h-[85vh] flex  flex-col  items-center justify-center  ubuntu-text">
-      <main className="flex flex-col-reverse sm:flex-col md:flex-row items-center justify-between w-full max-w-6xl ">
+    <div className="text-white min-h-[88vh] flex flex-col items-center justify-center ubuntu-text px-4">
+      <main className="flex flex-col-reverse sm:flex-col md:flex-row items-center justify-between w-full max-w-6xl">
         <div className="text-center md:text-left md:w-1/2 space-y-3">
-          <h2 className="text-xl ">Full Stack Developer</h2>
-          <h1 className="text-[44px] font-bold ubuntu">
+          <h2 className="text-xl">Full Stack Developer</h2>
+          <h1 className="text-[28px] sm:text-[37px] font-bold ubuntu">
             Hello I'm <br></br>
-            <span className="  text-green-500">Himanshu Sharma</span>
+            <div
+              ref={textRef}
+              className="text-green-500 min-h-16 h-auto  w-full"
+            >
+              {" "}
+            </div>
           </h1>
-          <p className="text-zinc-400">
+          <p className="text-zinc-400 text-wrap">
             I excel at crafting elegant digital experiences and I am proficient
             in various programming languages and technologies.
           </p>
-          <div className="flex flex-col space-y-6 justify-center md:justify-start ">
-            <button className="bg-transparent border border-green-500 w-fit text-green-500 px-4 py-2 rounded-full flex items-center space-x-2 mt-2">
-              <span>Download My CV</span>
-              <span>
-                {" "}
-                <Download />
-              </span>
-            </button>
-            <div className="social-media flex items-center px-3">
+          <div className="flex flex-col space-y-6 justify-center md:justify-start">
+            <div className="wrapper w-full flex justify-center md:justify-start items-center">
+              <button className="bg-transparent border border-green-500 w-fit text-green-500 hover:border-green-300 hover:text-green-300 px-4 py-2 rounded-full flex items-center space-x-2 mt-2">
+                <span>Download My CV</span>
+                <span>
+                  {" "}
+                  <Download />
+                </span>
+              </button>
+            </div>
+            <div className="social-media flex items-center justify-center md:justify-start px-3">
               <a
                 href="#github"
                 className="text-green-500 hover:text-green-300 mr-10"
@@ -59,36 +113,49 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="mt-6 md:mt-0 md:w-1/2 flex justify-end items-center">
-          <div className="relative">
+        <div className="mt-10 mb-10 md:mt-0 md:w-1/2 flex justify-center">
+          <div className="relative image-wraper flex justify-center items-center  w-full ">
             <img
               src={avtarImg}
               alt="Profile"
-              className="rounded-full z-40 w-[300px] h-[300px] object-cover m-3"
+              className="avater-image rounded-full z-40 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] object-cover"
             />
-            <div className="absolute inset-0 animate-spin-slow custom-dash "></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-transparent">
+              <PhotoBorder />
+            </div>
           </div>
         </div>
       </main>
-      <footer className="w-full max-w-6xl  mt-8 grid grid-cols-1 smgrid-cols-2 md:grid-cols-4 place-items-center sm:justify-between text-center md:text-left px-8 ">
-        <div className="flex w-[100px] justify-center items-center space-x-2">
-          <h3 className="text-[50px]  font-bold">2+</h3>
-          <p className="text-zinc-400 text-wrap">Years of experience</p>
-        </div>
-        <div className="flex w-[100px] justify-center items-center space-x-2">
-          <h3 className="text-[50px] font-bold">15+</h3>
-          <p className="text-zinc-400">Projects completed</p>
-        </div>
-        <div className="flex w-[100px] justify-center items-center space-x-2">
-          <h3 className="text-[50px] font-bold">8</h3>
-          <p className="text-zinc-400">Technologies mastered</p>
-        </div>
-        <div className="flex w-[100px] justify-center items-center space-x-2">
-          <h3 className="text-[50px] font-bold">200+</h3>
-          <p className="text-zinc-400">Code commits</p>
+      <footer className="w-full mt-8 flex justify-center items-center">
+        <div className="wrap w-full flex flex-wrap justify-between text-center md:text-left md:px-3 md:space-y-0 lg:space-x-4">
+          <div className="flex flex-col items-center md:flex-row md:items-center space-x-2">
+            <h3 className="text-[32px] sm:text-[40px] font-bold">2+</h3>
+            <p className="text-center text-zinc-400 text-wrap max-w-[60%] md:justify-start ">
+              Years of experience
+            </p>
+          </div>
+          <div className="flex flex-col items-center md:flex-row md:items-center space-x-2">
+            <h3 className="text-[32px] sm:text-[40px] font-bold">15+</h3>
+            <p className="text-center text-zinc-400 text-wrap w-[60%] ">
+              Projects completed
+            </p>
+          </div>
+          <div className="flex flex-col items-center md:flex-row md:items-center space-x-2">
+            <h3 className="text-[32px] sm:text-[40px] font-bold">8+</h3>
+            <p className="text-center text-zinc-400 text-wrap w-[60%] ">
+              Technologies mastered
+            </p>
+          </div>
+          <div className="flex flex-col items-center md:flex-row md:items-center  space-x-2">
+            <h3 className="text-[32px] sm:text-[40px] font-bold">200+</h3>
+            <p className="text-center text-zinc-400  text-wrap w-[40%] ">
+              Code commits
+            </p>
+          </div>
         </div>
       </footer>
     </div>
   );
 };
+
 export default Home;

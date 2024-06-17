@@ -1,7 +1,11 @@
 import React from 'react'
 
 const About = () => {
-  return <div>this is About </div>;
+  return (
+    <div className="min-h-[88vh] bg--900 relative ">
+      
+    </div>
+  );
 }
 
 export default About
