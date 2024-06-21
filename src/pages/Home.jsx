@@ -12,6 +12,7 @@ import { useEffect, useRef } from "react";
 import { TextPlugin } from "gsap/all";
 import PhotoBorder from "../components/PhotoBorder";
 import About from "./About";
+import Skill from "./Skill";
 
 
 const Home = () => {
@@ -60,15 +61,15 @@ const Home = () => {
 
   return (
     <>
-      <div className="text-white min-h-[88vh] flex flex-col items-center justify-center ubuntu-text px-4">
+      <div className="text-white w-full md:h-[88vh]   flex flex-col items-center justify-around ubuntu-text px-4 mb-10">
         <main className="flex flex-col-reverse  md:flex-row items-center justify-between w-full max-w-6xl">
           <div className="text-center md:text-left md:w-1/2 space-y-3">
-            <h2 className="text-xl">Full Stack Developer</h2>
+            <h2 className="text-xl ">Full Stack Developer</h2>
             <h1 className="text-[28px] sm:text-[37px] font-bold ubuntu">
               Hello I'm <br></br>
               <div
                 ref={textRef}
-                className="text-green-500 min-h-16 h-auto  w-full"
+                className="text-green-500 md:min-h-[70px] h-auto  w-full"
               >
                 {" "}
               </div>
@@ -77,7 +78,7 @@ const Home = () => {
               I excel at crafting elegant digital experiences and I am
               proficient in various programming languages and technologies.
             </p>
-            <div className="flex flex-col space-y-6 justify-center md:justify-start">
+            <div className="flex flex-col space-y-8 justify-center md:justify-start">
               <div className="wrapper w-full flex justify-center md:justify-start items-center">
                 <button className="bg-transparent border border-green-500 w-fit text-green-500 hover:border-green-300 hover:text-green-300 px-4 py-2 rounded-full flex items-center space-x-2 mt-2">
                   <span>Download My CV</span>
@@ -115,12 +116,12 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="mt-10 mb-10 md:mt-0 md:w-1/2 flex justify-center">
+          <div className="mt-10 mb-10 md:mt-12 md:w-1/2 h-ful flex justify-center ">
             <div className="relative image-wraper flex justify-center items-center  w-full ">
               <img
                 src={avtarImg}
                 alt="Profile"
-                className="avater-image rounded-full z-40 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] object-cover"
+                className="avater-image rounded-full z-40 w-[200px] sm:w-[250px] h-[200px] sm:h-[250px] object-cover"
               />
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-transparent">
                 <PhotoBorder />
@@ -158,6 +159,7 @@ const Home = () => {
         </footer>
       </div>
       <About />
+      <Skill />
     </>
   );
 };

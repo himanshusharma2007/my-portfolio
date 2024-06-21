@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-zinc-900 text-white w-full flex justify-between items-center px-4 py-2 ubuntu-text md:px-12 md:h-[12vh]">
+    <header className="bg-zinc-900 fixed z-50 text-white w-full flex justify-between items-center px-4 py-2 ubuntu-text md:px-12 h-[8vh] md:h-[12vh]">
       <Link to="/">
         <div className="text-2xl md:text-3xl satisfy font-bold mt-3">
           Himanshu<span className="text-green-500">.</span>
