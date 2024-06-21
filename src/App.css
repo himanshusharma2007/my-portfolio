@@ -34,6 +34,13 @@
 .card:hover{
 box-shadow:20px 10px 60px rgba(193, 12, 12, 0.3) ;
 }
+.stylied-number {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 1px #ffeded;
+  text-shadow: 2px 2px 0 rgba(157, 152, 152, 0.3);
+}
 /* .image-wraper img {
   filter: drop-shadow(0 0 20px rgba(64, 167, 88, 0.5)) drop-shadow(0 0 60px rgba(64, 167, 88, 0.3));
 }

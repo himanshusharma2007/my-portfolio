@@ -43,11 +43,11 @@ const Header = () => {
           <Link to="/skill">
             <button>Skills</button>
           </Link>
-          <Link to="/contact">
-            <button>Contact</button>
-          </Link>
           <Link to="/projects">
             <button>Projects</button>
+          </Link>
+          <Link to="/contact">
+            <button>Contact</button>
           </Link>
           <button className="bg-green-500 text-black px-4 py-2 rounded-full">
             Hire me
@@ -89,14 +89,14 @@ const Header = () => {
               <ListItemText primary="Skills" />
             </ListItem>
           </Link>
-          <Link to="/contact" onClick={toggleDrawer(false)}>
-            <ListItem button>
-              <ListItemText primary="Contact" />
-            </ListItem>
-          </Link>
           <Link to="/projects" onClick={toggleDrawer(false)}>
             <ListItem button>
               <ListItemText primary="Projects" />
+            </ListItem>
+          </Link>
+          <Link to="/contact" onClick={toggleDrawer(false)}>
+            <ListItem button>
+              <ListItemText primary="Contact" />
             </ListItem>
           </Link>
         </List>
