@@ -12,7 +12,7 @@ const Projects = () => {
   const items = [
     {
       id: 1,
-      title: "ShopSquire-a Ecommarce website",
+      title: "ShopSquire-a Ecommarce workspace",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit .hsdhs ABHCdi uiuasdv sdvuoasdw assdviugawe asdiugwqe usgdfqiwe asdasd asdvasdv adsasdfas asdvasdz ",
       imgURL: imgShopSquire,
       liveLink: "https://shop-squire.vercel.app/",
@@ -30,7 +30,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "FoodyZone-a online food delivary website",
+      title: "FoodyZone-a online food delivary plateform",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit .hsdhs ABHCdi uiuasdv sdvuoasdw assdviugawe asdiugwqe usgdfqiwe asdasd asdvasdv adsasdfas asdvasdz ",
       imgURL: imgFoodyZone,
       liveLink: "#",
@@ -48,7 +48,7 @@ const Projects = () => {
   };
   return (
     <>
-      <div className="relative md:min-h-[88vh] h-auto bg-zinc-900 flex flex-col  text-white items-center  ">
+      <div className="relative md:min-h-[88vh] h-auto bg-zinc-800 px-6 rounded-lg flex flex-col  text-white items-center  ">
         <div className="wraper w-full h-[8vh] md:h-[12vh] mt-2 flex justify-center items-center ">
           <h2 className="text-4xl sm:text-5xl w-fit flex flex-col justify-center items-start font-bold text-center patrick ">
             Projects

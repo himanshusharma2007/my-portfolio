@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Drawer from "@mui/material/Drawer";
 import { Menu, X } from "lucide-react";
 import List from "@mui/material/List";
@@ -9,6 +9,7 @@ import IconButton from "@mui/material/IconButton";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const location = useLocation();
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -19,6 +20,33 @@ const Header = () => {
     }
     setDrawerOpen(open);
   };
+
+  const isActive = (path) => location.pathname === path;
+
+  const NavLink = ({ to, children }) => (
+    <Link to={to}>
+      <button
+        className={`relative ${
+          isActive(to)
+            ? "text-green-500 after:content-[''] after:absolute after:left-0 after:bottom-[-5px] after:w-full after:h-[2px] after:bg-green-500"
+            : "text-white hover:text-green-500 transition-colors"
+        }`}
+      >
+        {children}
+      </button>
+    </Link>
+  );
+
+  const DrawerLink = ({ to, primary, onClick }) => (
+    <Link to={to} onClick={onClick}>
+      <ListItem button>
+        <ListItemText
+          primary={primary}
+          className={isActive(to) ? "text-green-500" : "text-white"}
+        />
+      </ListItem>
+    </Link>
+  );
 
   return (
     <header className="bg-zinc-900 fixed z-50 text-white w-full flex justify-between items-center px-4 py-2 ubuntu-text md:px-12 h-[8vh] md:h-[12vh]">
@@ -34,24 +62,16 @@ const Header = () => {
           </div>
         </div>
         <nav className="hidden md:flex md:space-x-6 justify-center items-center">
-          <Link to="/">
-            <button className="active:text-green-500">Home</button>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About me</NavLink>
+          <NavLink to="/skill">Skills</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+          <Link to="/hire">
+            <button className="bg-green-500 text-black px-4 py-2 rounded-full hover:bg-green-600 transition-colors">
+              Hire me
+            </button>
           </Link>
-          <Link to="/about">
-            <button className="active:text-green-500">About me</button>
-          </Link>
-          <Link to="/skill">
-            <button>Skills</button>
-          </Link>
-          <Link to="/projects">
-            <button>Projects</button>
-          </Link>
-          <Link to="/contact">
-            <button>Contact</button>
-          </Link>
-          <button className="bg-green-500 text-black px-4 py-2 rounded-full">
-            Hire me
-          </button>
         </nav>
       </div>
       <Drawer
@@ -74,31 +94,27 @@ const Header = () => {
           </IconButton>
         </div>
         <List sx={{ width: 250 }}>
-          <Link to="/" onClick={toggleDrawer(false)}>
-            <ListItem button>
-              <ListItemText primary="Home" className="text-green-500" />
-            </ListItem>
-          </Link>
-          <Link to="/about" onClick={toggleDrawer(false)}>
-            <ListItem button>
-              <ListItemText primary="About me" />
-            </ListItem>
-          </Link>
-          <Link to="/skill" onClick={toggleDrawer(false)}>
-            <ListItem button>
-              <ListItemText primary="Skills" />
-            </ListItem>
-          </Link>
-          <Link to="/projects" onClick={toggleDrawer(false)}>
-            <ListItem button>
-              <ListItemText primary="Projects" />
-            </ListItem>
-          </Link>
-          <Link to="/contact" onClick={toggleDrawer(false)}>
-            <ListItem button>
-              <ListItemText primary="Contact" />
-            </ListItem>
-          </Link>
+          <DrawerLink to="/" primary="Home" onClick={toggleDrawer(false)} />
+          <DrawerLink
+            to="/about"
+            primary="About me"
+            onClick={toggleDrawer(false)}
+          />
+          <DrawerLink
+            to="/skill"
+            primary="Skills"
+            onClick={toggleDrawer(false)}
+          />
+          <DrawerLink
+            to="/projects"
+            primary="Projects"
+            onClick={toggleDrawer(false)}
+          />
+          <DrawerLink
+            to="/contact"
+            primary="Contact"
+            onClick={toggleDrawer(false)}
+          />
         </List>
       </Drawer>
     </header>
