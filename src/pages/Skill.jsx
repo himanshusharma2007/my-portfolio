@@ -36,12 +36,14 @@ const Skill = () => {
         boxShadow: `${rotateY * 2}px ${rotateX * 2}px 20px rgba(0, 0, 0, 0.2)`,
       });
 
-      gsap.to(experienceRefs.current[experienceText], {
-        opacity: 1,
-        y: 0,
-        delay:0.2,
-        duration: 1,
-      });
+      if (experienceRefs.current[experienceText]) {
+        gsap.to(experienceRefs.current[experienceText], {
+          opacity: 1,
+          y: 0,
+          delay: 0.2,
+          duration: 1,
+        });
+      }
     };
 
     const handleMouseLeave = (e, experienceText) => {
@@ -53,42 +55,46 @@ const Skill = () => {
         boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
       });
 
-      gsap.to(experienceRefs.current[experienceText], {
-        opacity: 0,
-        y: 20,
-        delay: 0.2,
-        duration: 1,
-      });
+      if (experienceRefs.current[experienceText]) {
+        gsap.to(experienceRefs.current[experienceText], {
+          opacity: 0,
+          y: 20,
+          delay: 0.2,
+          duration: 1,
+        });
+      }
     };
 
     const cards = document.querySelectorAll(".card");
 
-    cards.forEach((card, index) => {
-      const experienceText = card
-        .querySelector(".card-name")
-        .textContent.trim();
-      experienceRefs.current[experienceText] =
-        card.querySelector(".experience");
+    cards.forEach((card) => {
+      const cardNameElement = card.querySelector(".card-name");
+      if (cardNameElement) {
+        const experienceText = cardNameElement.textContent.trim();
+        experienceRefs.current[experienceText] =
+          card.querySelector(".experience");
 
-      card.addEventListener("mousemove", (e) =>
-        handleMouseMove(e, experienceText)
-      );
-      card.addEventListener("mouseleave", (e) =>
-        handleMouseLeave(e, experienceText)
-      );
+        card.addEventListener("mousemove", (e) =>
+          handleMouseMove(e, experienceText)
+        );
+        card.addEventListener("mouseleave", (e) =>
+          handleMouseLeave(e, experienceText)
+        );
+      }
     });
 
     return () => {
       cards.forEach((card) => {
-        const experienceText = card
-          .querySelector(".card-name")
-          .textContent.trim();
-        card.removeEventListener("mousemove", (e) =>
-          handleMouseMove(e, experienceText)
-        );
-        card.removeEventListener("mouseleave", (e) =>
-          handleMouseLeave(e, experienceText)
-        );
+        const cardNameElement = card.querySelector(".card-name");
+        if (cardNameElement) {
+          const experienceText = cardNameElement.textContent.trim();
+          card.removeEventListener("mousemove", (e) =>
+            handleMouseMove(e, experienceText)
+          );
+          card.removeEventListener("mouseleave", (e) =>
+            handleMouseLeave(e, experienceText)
+          );
+        }
       });
     };
   }, []);
@@ -96,12 +102,12 @@ const Skill = () => {
   return (
     <div className="md:min-h-[88vh] bg-zinc-900 text-white pb-3">
       <div className="main flex justify-center items-center flex-col ">
-        <h2 className="text-5xl w-fit flex flex-col justify-center  items-start font-bold text-center mb-4 patrick ">
+        <h2 className="text-5xl w-fit flex flex-col justify-center items-start font-bold text-center mb-4 patrick">
           Skills
           <span className="h-[4px] w-[50px] bg-green-500 mt-1 rounded-md"></span>
         </h2>
         <div className="skill-cards flex flex-wrap gap-x-10 gap-y-7 justify-center items-center px-1">
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg  bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
             <div>
               <TfiHtml5 className="text-[70px] mt-2" />
             </div>
@@ -110,7 +116,7 @@ const Skill = () => {
               2+ years Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg  bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
             <div>
               <FaCss3Alt className="text-[70px] mt-2" />
             </div>
@@ -119,7 +125,7 @@ const Skill = () => {
               2+ year Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg  bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
             <div>
               <SiJavascript className="text-[70px] mt-2" />
             </div>
@@ -128,7 +134,7 @@ const Skill = () => {
               1.5+ year Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg  bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
             <div>
               <FaReact className="text-[70px] mt-2" />
             </div>
@@ -137,7 +143,7 @@ const Skill = () => {
               1+ year Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg  bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
             <div>
               <RiTailwindCssFill className="text-[70px] mt-2" />
             </div>
@@ -146,7 +152,7 @@ const Skill = () => {
               1+ year Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg  bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
             <div>
               <FaBootstrap className="text-[70px] mt-2" />
             </div>
@@ -155,7 +161,7 @@ const Skill = () => {
               2+ year Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg  bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
             <div>
               <IoLogoFirebase className="text-[70px] mt-2" />
             </div>
@@ -165,7 +171,7 @@ const Skill = () => {
             </div>
           </div>
 
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg  bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
             <div>
               <GrMysql className="text-[70px] mt-2" />
             </div>
@@ -174,7 +180,7 @@ const Skill = () => {
               1+ year Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg  bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
             <div>
               <FaPhp className="text-[70px] mt-2" />
             </div>
@@ -183,7 +189,7 @@ const Skill = () => {
               6+ months Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg  bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
             <div>
               <FaGithub className="text-[70px] mt-2" />
             </div>

@@ -13,6 +13,8 @@ import { TextPlugin } from "gsap/all";
 import PhotoBorder from "../components/PhotoBorder";
 import About from "./About";
 import Skill from "./Skill";
+import Projects from "./Projects";
+import AllProjects from "../components/AllProjects";
 
 
 const Home = () => {
@@ -160,6 +162,7 @@ const Home = () => {
       </div>
       <About />
       <Skill />
+      <Projects />
     </>
   );
 };
