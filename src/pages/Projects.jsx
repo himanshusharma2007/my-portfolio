@@ -56,7 +56,7 @@ const Projects = () => {
   };
   return (
     <>
-      <div className="relative md:min-h-[88vh] h-auto bg-zinc-800 px-6 rounded-lg flex flex-col  text-white items-center  ">
+      <div className="relative md:min-h-[88vh] h-auto bg-zinc-800 px-2 md:px-6 rounded-lg flex flex-col  text-white items-center  ">
         <div className="wraper w-full h-[8vh] md:h-[12vh] mt-2 flex justify-center items-center ">
           <h2 className="text-4xl sm:text-5xl w-fit flex flex-col justify-center items-start font-bold text-center patrick ">
             Projects
@@ -64,7 +64,7 @@ const Projects = () => {
           </h2>
         </div>
         <div className=" w-full md:h-[76vh] h-auto  flex items-center justify-center ">
-          <div className="wraper relative min-h-[45rem] md:min-h-[76vh] w-full ">
+          <div className="wraper relative min-h-[48rem] md:min-h-[76vh] w-full ">
             {items.map((item, index) => (
               <div
                 key={item.id}

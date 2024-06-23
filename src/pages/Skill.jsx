@@ -106,8 +106,8 @@ const Skill = () => {
           Skills
           <span className="h-[4px] w-[50px] bg-green-500 mt-1 rounded-md"></span>
         </h2>
-        <div className="skill-cards flex flex-wrap gap-x-4 md:gap-x-10 gap-y-7 justify-center items-center px-1">
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+        <div className="skill-cards flex flex-wrap gap-x-2 md:gap-x-10 gap-y-7 justify-center items-center px-1">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[130px] h-[170px] sm:w-[200px] sm:h-[200px] justify-center items-center">
             <div>
               <TfiHtml5 className="text-[70px] mt-2" />
             </div>
@@ -116,7 +116,7 @@ const Skill = () => {
               2+ years Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[130px] h-[170px] sm:w-[200px] sm:h-[200px] justify-center items-center">
             <div>
               <FaCss3Alt className="text-[70px] mt-2" />
             </div>
@@ -125,7 +125,7 @@ const Skill = () => {
               2+ year Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[130px] h-[170px] sm:w-[200px] sm:h-[200px] justify-center items-center">
             <div>
               <SiJavascript className="text-[70px] mt-2" />
             </div>
@@ -134,7 +134,7 @@ const Skill = () => {
               1.5+ year Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[130px] h-[170px] sm:w-[200px] sm:h-[200px] justify-center items-center">
             <div>
               <FaReact className="text-[70px] mt-2" />
             </div>
@@ -143,7 +143,7 @@ const Skill = () => {
               1+ year Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[130px] h-[170px] sm:w-[200px] sm:h-[200px] justify-center items-center">
             <div>
               <RiTailwindCssFill className="text-[70px] mt-2" />
             </div>
@@ -152,7 +152,7 @@ const Skill = () => {
               1+ year Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[130px] h-[170px] sm:w-[200px] sm:h-[200px] justify-center items-center">
             <div>
               <FaBootstrap className="text-[70px] mt-2" />
             </div>
@@ -161,7 +161,7 @@ const Skill = () => {
               2+ year Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[130px] h-[170px] sm:w-[200px] sm:h-[200px] justify-center items-center">
             <div>
               <IoLogoFirebase className="text-[70px] mt-2" />
             </div>
@@ -171,7 +171,7 @@ const Skill = () => {
             </div>
           </div>
 
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[130px] h-[170px] sm:w-[200px] sm:h-[200px] justify-center items-center">
             <div>
               <GrMysql className="text-[70px] mt-2" />
             </div>
@@ -180,7 +180,7 @@ const Skill = () => {
               1+ year Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[130px] h-[170px] sm:w-[200px] sm:h-[200px] justify-center items-center">
             <div>
               <FaPhp className="text-[70px] mt-2" />
             </div>
@@ -189,7 +189,7 @@ const Skill = () => {
               6+ months Experience
             </div>
           </div>
-          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
+          <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[130px] h-[170px] sm:w-[200px] sm:h-[200px] justify-center items-center">
             <div>
               <FaGithub className="text-[70px] mt-2" />
             </div>

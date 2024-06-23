@@ -37,7 +37,7 @@ function Contact({ text }) {
   return (
     <div className="lg:min-h-[88vh] bg-zinc-900 text-zinc-200 flex flex-col items-center justify-center ubuntu-text">
       <div className=" w-full bg-zinc-800 rounded-lg shadow-lg p-4 lg:flex lg:space-x-4 justify-center items-center">
-        <div className="lg:w-2/3 p-4">
+        <div className="lg:w-2/3 ">
           <h2 className="text-2xl font-bold text-green-400 mb-3 roboto">
             {text}
           </h2>
@@ -123,7 +123,7 @@ function Contact({ text }) {
             <FaEnvelope className="text-green-400" />
             <div>
               <p className="text-zinc-400 ">Email</p>
-              <p className="flex text-wrap">sharmahimanshu6478@gmail.com</p>
+              <p className="flex flex-wrap text-sm">sharmahimanshu6478@gmail.com</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">

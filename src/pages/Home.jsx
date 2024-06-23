@@ -83,7 +83,8 @@ const Home = () => {
               Hello I'm <br />
               <div
                 ref={textRef}
-                className="text-green-500 flex min-h-[5px]  items-center md:min-h-[70px] h-auto w-full"
+                className="text-green-500 
+        flex min-h-[52px] justify-center md:justify-start items-center  md:min-h-[70px] h-auto w-full"
               ></div>
             </h1>
             <p className="text-zinc-400 text-wrap">
@@ -135,11 +136,11 @@ const Home = () => {
             </div>
           </div>
           <div className="mt-10 mb-10 md:mt-12 md:w-1/2 h-full flex justify-center">
-            <div className="relative image-wraper flex justify-center items-center w-full">
+            <div className="relative image-wraper flex justify-center items-center w-full ">
               <img
                 src={avtarImg}
                 alt="Profile"
-                className="avater-image rounded-full z-40 w-[200px] sm:w-[250px] h-[200px] sm:h-[250px] object-cover"
+                className="avater-image rounded-full z-40 h-[180px] w-[180px] sm:w-[250px]  sm:h-[250px] object-cover"
               />
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-transparent">
                 <PhotoBorder />
@@ -148,8 +149,8 @@ const Home = () => {
           </div>
         </main>
         <footer className="w-full mt-8 flex justify-center items-center">
-          <div className="wrap w-full grid grid-cols-2 gap-10 sm:grid-cols-4 text-center md:text-left md:space-y-0 lg:space-x-4">
-            <div className="flex flex-col items-center md:flex-row md:items-center space-x-2">
+          <div className="wrap w-full grid grid-cols-2 gap-10 sm:grid-cols-4 text-center md:text-left md:space-y-0 lg:space-x-4 ">
+            <div className="flex flex-col items-center  md:flex-row md:items-center space-x-2">
               <h3
                 className="count-number text-[32px] sm:text-[40px] font-bold"
                 ref={(el) => (countRefs.current[0] = el)}
@@ -171,7 +172,7 @@ const Home = () => {
                 Projects completed
               </p>
             </div>
-            <div className="flex flex-col items-center md:flex-row md:items-center space-x-2">
+            <div className="flex flex-col items-center md:flex-row md:items-center space-x-2 ">
               <h3
                 className="count-number text-[32px] sm:text-[40px] font-bold"
                 ref={(el) => (countRefs.current[2] = el)}
@@ -182,7 +183,7 @@ const Home = () => {
                 Technologies mastered
               </p>
             </div>
-            <div className="flex flex-col items-center md:flex-row md:items-center space-x-2">
+            <div className="flex flex-col items-center md:flex-row md:items-center space-x-2 ">
               <h3
                 className="count-number text-[32px] sm:text-[40px] font-bold"
                 ref={(el) => (countRefs.current[3] = el)}

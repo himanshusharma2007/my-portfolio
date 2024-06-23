@@ -56,10 +56,10 @@ const Header = () => {
           Himanshu<span className="text-green-500">.</span>
         </div>
       </Link>
-      <div className="wrapper mt-3">
+      <div className="wrapper mt-3 ">
         <div className="md:hidden">
           <div onClick={toggleDrawer(true)}>
-            <HiOutlineBars3BottomRight />
+            <HiOutlineBars3BottomRight fontSize="30px" />
           </div>
         </div>
         <nav className="hidden md:flex md:space-x-6 justify-center items-center">
@@ -81,7 +81,7 @@ const Header = () => {
         onClose={toggleDrawer(false)}
         PaperProps={{
           sx: {
-            backgroundColor: "rgb(62, 55, 55)",
+            backgroundColor: "rgb(32, 30, 30)",
             color: "white",
           },
         }}

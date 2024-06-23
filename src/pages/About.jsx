@@ -150,8 +150,10 @@ const About = () => {
                     <div>+91 9216363747</div>
                   </div>
                   <div className="email ml-1 flex items-center space-x-3">
-                    <TfiEmail className="text-[16px] text-center" />
-                    <div>sharmahimanshu6478@gmail.com</div>
+                    <TfiEmail className="text-[20px] text-center" />
+                    <div className="text-[12px] ">
+                      sharmahimanshu6478@gmail.com
+                    </div>
                   </div>
                 </div>
               </div>
