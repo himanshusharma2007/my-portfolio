@@ -83,7 +83,7 @@ const Home = () => {
               Hello I'm <br />
               <div
                 ref={textRef}
-                className="text-green-500 md:min-h-[70px] h-auto w-full"
+                className="text-green-500 flex min-h-[50px]  items-center md:min-h-[70px] h-auto w-full"
               ></div>
             </h1>
             <p className="text-zinc-400 text-wrap">

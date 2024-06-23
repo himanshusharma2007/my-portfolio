@@ -43,7 +43,7 @@ const Header = () => {
       <ListItem button>
         <ListItemText
           primary={primary}
-          className={isActive(to) ? "text-green-500" : "text-white"}
+          className={isActive(to) ? "text-green-500 text-center" : "text-white text-center"}
         />
       </ListItem>
     </Link>
