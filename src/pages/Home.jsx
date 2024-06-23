@@ -1,11 +1,5 @@
-import {
-  Download,
-  Github,
-  Instagram,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
-import avtarImg from "../assets/images/download.png";
+import { Download, Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import avtarImg from "../assets/images/file (2).png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
@@ -15,7 +9,7 @@ import About from "./About";
 import Skill from "./Skill";
 import Projects from "./Projects";
 import Contact from "./Contact";
-import cv from "../assets/myresume.pdf";
+import cv from "../assets/Himanshu_Sharma_CV.pdf";
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
 const Home = () => {
@@ -54,32 +48,30 @@ const Home = () => {
       tl.to({}, { duration: delayBetweenStrings });
     });
   }, []);
-useEffect(() => {
-  const animateValue = (obj, start, end, duration) => {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      const current = Math.floor(progress * (end - start) + start);
-      obj.innerHTML = current + "+";
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
+  useEffect(() => {
+    const animateValue = (obj, start, end, duration) => {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const current = Math.floor(progress * (end - start) + start);
+        obj.innerHTML = current + "+";
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
     };
-    window.requestAnimationFrame(step);
-  };
 
-  countRefs.current.forEach((ref) => {
-    const endValue = parseInt(ref.innerText, 10);
-    if (!isNaN(endValue)) {
-      // Adjust duration calculation to make it slower for smaller numbers
-      const duration = Math.max(2000, endValue * 20); // Minimum 2 seconds, then 100ms per unit
-      animateValue(ref, 0, endValue, duration);
-    }
-  });
-}, []);
-
-
+    countRefs.current.forEach((ref) => {
+      const endValue = parseInt(ref.innerText, 10);
+      if (!isNaN(endValue)) {
+        // Adjust duration calculation to make it slower for smaller numbers
+        const duration = Math.max(2000, endValue * 20); // Minimum 2 seconds, then 100ms per unit
+        animateValue(ref, 0, endValue, duration);
+      }
+    });
+  }, []);
 
   return (
     <div className="flex flex-col space-y-16">
@@ -95,8 +87,9 @@ useEffect(() => {
               ></div>
             </h1>
             <p className="text-zinc-400 text-wrap">
-              I excel at crafting elegant digital experiences and I am
-              proficient in various programming languages and technologies.
+              I Blend creativity with technical prowers to solve complex
+              challenges and build captivating digital experiences that make a
+              lasting impact.
             </p>
             <div className="flex flex-col space-y-8 justify-center md:justify-start">
               <div className="wrapper w-full flex justify-center md:justify-start items-center">
@@ -112,29 +105,31 @@ useEffect(() => {
                 </a>
               </div>
               <div className="social-media flex items-center justify-center md:justify-start">
-                <a
-                  href="#github"
-                  className="text-green-500 hover:text-green-300 mr-10"
-                >
-                  <Github />
+                <a href="https://github.com/himanshusharma2007" target="_blank">
+                  <button className="text-green-500 hover:text-green-300 mr-10">
+                    <Github />
+                  </button>
                 </a>
                 <a
-                  href="#linkedin"
-                  className="text-green-500 hover:text-green-300 mr-10"
+                  href="https://www.linkedin.com/in/himanshu-sharma-572a152b7/"
+                  target="_blank"
                 >
-                  <Linkedin />
+                  <button className="text-green-500 hover:text-green-300 mr-10">
+                    <Linkedin />
+                  </button>
+                </a>
+                <a href="https://x.com/Himanshush56261" target="_blank">
+                  <button className="text-green-500 hover:text-green-300 mr-10">
+                    <Twitter />
+                  </button>
                 </a>
                 <a
-                  href="#twitter"
-                  className="text-green-500 hover:text-green-300 mr-10"
+                  href="https://www.instagram.com/_himanshu_sharma007_/?igsh=MXAxd2VpbGt1Z3Vybg%3D%3D"
+                  target="_blank"
                 >
-                  <Twitter />
-                </a>
-                <a
-                  href="#youtube"
-                  className="text-green-500 hover:text-green-300"
-                >
-                  <Instagram />
+                  <button className="text-green-500 hover:text-green-300 ">
+                    <Instagram />
+                  </button>
                 </a>
               </div>
             </div>

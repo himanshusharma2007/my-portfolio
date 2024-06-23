@@ -106,7 +106,7 @@ const Skill = () => {
           Skills
           <span className="h-[4px] w-[50px] bg-green-500 mt-1 rounded-md"></span>
         </h2>
-        <div className="skill-cards flex flex-wrap gap-x-10 gap-y-7 justify-center items-center px-1">
+        <div className="skill-cards flex flex-wrap gap-x-4 md:gap-x-10 gap-y-7 justify-center items-center px-1">
           <div className="card cursor-pointer hover:text-green-500 flex flex-col rounded-lg bg-zinc-700 w-[160px] h-[200px] justify-center items-center">
             <div>
               <TfiHtml5 className="text-[70px] mt-2" />

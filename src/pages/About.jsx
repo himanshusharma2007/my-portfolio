@@ -22,25 +22,27 @@ const About = () => {
             <p className="mb-4 text-lg tracking-wide">
               Hey there! I'm <span className="font-bold">Himanshu Sharma</span>,
               a Full Stack Developer in my 3rd year of BCA at CIITM College. I
-              whip up fancy digital experiences and dabble in all kinds of
-              coding languages and tech.
+              create engaging digital experiences with various coding languages
+              and technologies.
             </p>
             <p className="mb-4 text-lg tracking-wide">
-              I love cooking up creative solutions for both front-end and
-              back-end. I've mastered a bunch of tech and finished some pretty
-              cool projects. Let's create something awesome together!
+              I enjoy developing creative solutions for both front-end and
+              back-end projects. I've mastered several technologies and
+              completed exciting projects. Let's build something amazing
+              together!
             </p>
-            <Link to="/skill">
+
+            <Link to="/Contact">
               <button className="bg-green-700 rounded-md text-md flex items-center p-2 space-x-2 max-w-fit text-center">
-                <div>My Skills</div> <GoArrowRight fontSize="20px" />
+                <div>Reach me out</div> <GoArrowRight fontSize="20px" />
               </button>
             </Link>
           </div>
-          <div className="right-container p-3 md:w-1/2">
-            <div className="w-full bg-zinc-800 overflow-y-scroll rounded-md p-3 custom-scrollbar flex flex-col space-y-5 max-h-[70vh] shadow-md">
+          <div className="right-container small-responsive  sm:p-3 md:w-1/2  ">
+            <div className="w-full bg-zinc-800 overflow-y-scroll small-responsive rounded-md p-3 custom-scrollbar flex flex-col space-y-5 max-h-[70vh] shadow-md">
               <div className="Experience">
-                <h2 className="flex text-md  md:text-2xl justify-start items-center patrick">
-              <span className="bg-green-500 w-2 h-2 rounded-full mr-2 "></span>
+                <h2 className="flex text-md  text-2xl justify-start items-center patrick">
+                  <span className="bg-green-500 w-2 h-2 rounded-full mr-2 "></span>
                   Experience
                 </h2>
                 <div className="main w-full bg-zinc-700 p-3 mt-2 flex flex-col rounded-md">
@@ -57,7 +59,7 @@ const About = () => {
                 </div>
               </div>
               <div className="Education">
-                <h2 className="flex text-md patrick md:text-2xl justify-start items-center">
+                <h2 className="flex text-md patrick text-2xl justify-start items-center">
                   <span className="bg-green-500 w-2 h-2 rounded-full mr-2"></span>
                   Education
                 </h2>
@@ -75,7 +77,7 @@ const About = () => {
                 </div>
               </div>
               <div className="Certifications flex flex-col space-y-3">
-                <h2 className="flex text-md patrick md:text-2xl justify-start items-center">
+                <h2 className="flex text-md patrick text-2xl justify-start items-center">
                   <span className="bg-green-500 w-2 h-2 rounded-full mr-2"></span>
                   Certifications
                 </h2>
@@ -105,7 +107,7 @@ const About = () => {
                 </div>
               </div>
               <div className="Languages">
-                <h2 className="flex text-md patrick md:text-2xl justify-start items-center">
+                <h2 className="flex text-md patrick text-2xl justify-start items-center">
                   <span className="bg-green-500 w-2 h-2 rounded-full mr-2"></span>
                   Languages
                 </h2>
@@ -119,7 +121,7 @@ const About = () => {
                 </div>
               </div>
               <div className="Locality">
-                <h2 className="flex text-md patrick md:text-2xl justify-start items-center">
+                <h2 className="flex text-md patrick text-2xl justify-start items-center">
                   <span className="bg-green-500 w-2 h-2 rounded-full mr-2"></span>
                   Locality
                 </h2>
@@ -129,7 +131,7 @@ const About = () => {
                 </div>
               </div>
               <div className="freelancing">
-                <h2 className="flex text-md patrick md:text-2xl justify-start items-center">
+                <h2 className="flex text-md patrick text-2xl justify-start items-center">
                   <span className="bg-green-500 w-2 h-2 rounded-full mr-2"></span>
                   Freelance/Remote work/Offline
                 </h2>
@@ -138,7 +140,7 @@ const About = () => {
                 </div>
               </div>
               <div className="contact">
-                <h2 className="flex text-md patrick md:text-2xl justify-start items-center">
+                <h2 className="flex text-md patrick text-2xl justify-start items-center">
                   <span className="bg-green-500 w-2 h-2 rounded-full mr-2"></span>
                   Contact
                 </h2>

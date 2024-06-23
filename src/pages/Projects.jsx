@@ -9,33 +9,34 @@ import imgFoodyZone from "../assets/images/foodyzone.jpeg";
 import AllProjects from "../components/AllProjects";
 const Projects = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [expandedDescriptions, setExpandedDescriptions] = useState({});
   const items = [
     {
       id: 1,
-      title: "ShopSquire-a Ecommarce workspace",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit .hsdhs ABHCdi uiuasdv sdvuoasdw assdviugawe asdiugwqe usgdfqiwe asdasd asdvasdv adsasdfas asdvasdz ",
+      title: "ShopSquire - an E-commerce workspace",
+      desc: "ShopSquire is a React-powered e-commerce platform featuring user authentication, Firestore data persistence, detailed product pages, and responsive design. It offers seamless product sharing, GSAP animations, and user profiles. The project demonstrates proficiency in building complex, feature-rich web applications with modern technologies.",
       imgURL: imgShopSquire,
       liveLink: "https://shop-squire.vercel.app/",
       githubLink: "https://github.com/himanshusharma2007/ShopSquire",
-      techstack: "HTML, CSS, JS, React, Tailwind",
+      techstack: "React.js, Tailwind CSS, Firebase, GSAP",
     },
     {
       id: 2,
-      title: "BrightSide-a primary school website",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit .hsdhs ABHCdi uiuasdv sdvuoasdw assdviugawe asdiugwqe usgdfqiwe asdasd asdvasdv adsasdfas asdvasdz ",
+      title: "BrightSide - a primary school website",
+      desc: "BrightSide is a full-stack primary school website built with React and Firebase. It features user registration and authentication, dynamic pages with scrolling animations, responsive design, and real-time data handling using Firestore. The project showcases the ability to create engaging, interactive web experiences for educational institutions.",
       imgURL: imgBrightSide,
       liveLink: "https://brightside-rho.vercel.app/",
       githubLink: "https://github.com/himanshusharma2007/Brightside.git",
-      techstack: "HTML, CSS, JS, React, Tailwind",
+      techstack: "React, JavaScript, CSS3, Tailwind CSS, Firebase",
     },
     {
       id: 3,
-      title: "FoodyZone-a online food delivary plateform",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit .hsdhs ABHCdi uiuasdv sdvuoasdw assdviugawe asdiugwqe usgdfqiwe asdasd asdvasdv adsasdfas asdvasdz ",
+      title: "FoodyZone - an online food discovery  platform",
+      desc: "FoodyZone is a React-based web application for food discovery and exploration. It features a fully responsive design, meal type filtering options, visually appealing food item cards, and efficient data fetching from a backend API. The project demonstrates skills in creating user-centric designs and integrating front-end with back-end services.",
       imgURL: imgFoodyZone,
       liveLink: "#",
       githubLink: "https://github.com/himanshusharma2007/FoodyZone.git",
-      techstack: "HTML, CSS, JS, React, Tailwind",
+      techstack: "React.js, Tailwind CSS, Node.js",
     },
   ];
 
@@ -45,6 +46,13 @@ const Projects = () => {
 
   const handlePrev = () => {
     setCurrentSlide((prev) => (prev - 1 + items.length) % items.length);
+  };
+
+  const toggleDescription = (id) => {
+    setExpandedDescriptions((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
   };
   return (
     <>
@@ -71,24 +79,47 @@ const Projects = () => {
                   <div className="wraper w-fit h-fit  flex flex-col ">
                     <div className="stylied-number text-[60px]">0{item.id}</div>
                     <div className="project-title text-3xl ">{item.title}</div>
-                    <div className="disc text-md mt-3">{item.desc}</div>
+                    <div className=" description-container  h-32 overflow-y-auto relative custom-scrollbar2">
+                      <div
+                        className={`description text-md mt-3 transition-all duration-300 ease-in-out ${
+                          expandedDescriptions[item.id] ? "" : "line-clamp-3"
+                        }`}
+                      >
+                        {item.desc}
+                      </div>
+                      {!expandedDescriptions[item.id] && (
+                        <div className="fade-overlay absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-zinc-800 to-transparent"></div>
+                      )}
+                      <button
+                        onClick={() => toggleDescription(item.id)}
+                        className="text-green-500 hover:text-green-400 mt-2 text-sm font-medium z-10"
+                      >
+                        {expandedDescriptions[item.id]
+                          ? "Read less"
+                          : "Read more"}
+                      </button>
+                    </div>
                     <div className="techstack text-xl mt-3">
                       {item.techstack}
                     </div>
                     <div className="navigation flex mt-5 space-x-4">
-                      <button className="bg-zinc-700  text-white rounded-full p-4">
-                        <BsArrowUpRight />
-                      </button>
-                      <button className="bg-zinc-700 text-white rounded-full p-4">
-                        <FaGithub />
-                      </button>
+                      <a href={item.liveLink} target="_blank">
+                        <button className="bg-zinc-700 hover:bg-zinc-600  text-white rounded-full p-4">
+                          <BsArrowUpRight />
+                        </button>
+                      </a>
+                      <a href={item.githubLink} target="_blank">
+                        <button className="bg-zinc-700 hover:bg-zinc-600 text-white rounded-full p-4">
+                          <FaGithub />
+                        </button>
+                      </a>
                     </div>
                   </div>
                 </div>
                 <div className="right-container relative  flex flex-col w-full md:w-[60%]  h-auto justify-center  items-center pt-4 md:px-2">
                   <div className="relative h-[250px] sm:h-[320px] w-full  ">
                     <div
-                      className={`absolute inset-0 flex items-center justify-center  bg-gray-100 transition-opacity duration-500 ${
+                      className={`absolute inset-0 flex items-center justify-center rounded-lg  bg-gray-100 transition-opacity duration-500 ${
                         index === currentSlide
                           ? "opacity-100"
                           : "opacity-0 pointer-events-none"
@@ -97,7 +128,7 @@ const Projects = () => {
                       <img
                         src={item.imgURL}
                         alt=""
-                        className="w-full h-full object-fill"
+                        className="w-full h-full object-fill rounded-lg"
                       />
                     </div>
                   </div>
@@ -105,13 +136,13 @@ const Projects = () => {
                     <div className="absolute top-1/2 left-1/2 transform md:space-x-3 -translate-x-1/2 -translate-y-1/2  flex  w-full md:w-fit h-fit justify-between ">
                       <button
                         onClick={handlePrev}
-                        className=" bg-zinc-700  p-3 rounded-full"
+                        className=" bg-zinc-700 hover:bg-zinc-600 p-3 rounded-full"
                       >
                         <BiArrowBack className="text-white  text-2xl   " />
                       </button>
                       <button
                         onClick={handleNext}
-                        className=" bg-zinc-700  p-3 rounded-full"
+                        className=" bg-zinc-700 hover:bg-zinc-600 p-3 rounded-full"
                       >
                         <IoArrowForward className=" text-white  text-2xl " />
                       </button>

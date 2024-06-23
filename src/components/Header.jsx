@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Drawer from "@mui/material/Drawer";
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import IconButton from "@mui/material/IconButton";
+import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -58,7 +59,7 @@ const Header = () => {
       <div className="wrapper mt-3">
         <div className="md:hidden">
           <div onClick={toggleDrawer(true)}>
-            <Menu />
+            <HiOutlineBars3BottomRight />
           </div>
         </div>
         <nav className="hidden md:flex md:space-x-6 justify-center items-center">
