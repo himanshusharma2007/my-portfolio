@@ -42,8 +42,9 @@ function Contact({ text }) {
             {text}
           </h2>
           <p className="text-zinc-400 mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nesciunt
-            sit illo esse commodi.
+            Have a project in mind or just want to say hi? I'm always open to
+            discussing new ideas and opportunities. Feel free to reach out, and
+            let's connect! Together, we can create something amazing.
           </p>
           <form ref={form} onSubmit={sendEmail} className="space-y-3">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
