@@ -102,7 +102,7 @@ const Skill = () => {
   return (
     <div className="md:min-h-[88vh] bg-zinc-900 text-white pb-3">
       <div className="main flex justify-center items-center flex-col ">
-        <h2 className="text-5xl w-fit flex flex-col justify-center items-start font-bold text-center mb-4 patrick">
+        <h2 className="text-5xl w-fit flex flex-col justify-center items-start font-bold text-center mb-6 patrick">
           Skills
           <span className="h-[4px] w-[50px] bg-green-500 mt-1 rounded-md"></span>
         </h2>
