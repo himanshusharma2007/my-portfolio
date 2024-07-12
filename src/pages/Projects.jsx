@@ -5,7 +5,7 @@ import { BiArrowBack } from "react-icons/bi";
 import { IoArrowForward } from "react-icons/io5";
 import imgShopSquire from "../assets/images/shopsquire.png";
 import imgBrightSide from "../assets/images/brightside.png";
-import imgFoodyZone from "../assets/images/foodyzone.jpeg";
+import imgTrackEx from "../assets/images/trackex.png";
 import AllProjects from "../components/AllProjects";
 const Projects = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -22,21 +22,23 @@ const Projects = () => {
     },
     {
       id: 2,
+      title: "TrackEx - a Expense tracking app",
+      desc: "TrackEx is a user-friendly expense tracking app that simplifies personal and group finance management. It allows users to easily log expenses, split costs with friends, set budgets, and get a clear overview of their spending habits, all without requiring a login . It is here to solve the age-old question: 'Who owes what to whom?'",
+      imgURL: imgTrackEx,
+      liveLink: "https://trackex-sigma.vercel.app/",
+      githubLink:
+        "https://github.com/himanshusharma2007/Expense-Tracking-App.gitt",
+      techstack: "React, JavaScript, Tailwind CSS, Firebase",
+    },
+
+    {
+      id: 3,
       title: "BrightSide - a primary school website",
       desc: "BrightSide is a full-stack primary school website built with React and Firebase. It features user registration and authentication, dynamic pages with scrolling animations, responsive design, and real-time data handling using Firestore. The project showcases the ability to create engaging, interactive web experiences for educational institutions.",
       imgURL: imgBrightSide,
       liveLink: "https://brightside-rho.vercel.app/",
       githubLink: "https://github.com/himanshusharma2007/Brightside.git",
       techstack: "React, JavaScript, CSS3, Tailwind CSS, Firebase",
-    },
-    {
-      id: 3,
-      title: "FoodyZone - an online food discovery  platform",
-      desc: "FoodyZone is a React-based web application for food discovery and exploration. It features a fully responsive design, meal type filtering options, visually appealing food item cards, and efficient data fetching from a backend API. The project demonstrates skills in creating user-centric designs and integrating front-end with back-end services.",
-      imgURL: imgFoodyZone,
-      liveLink: "#",
-      githubLink: "https://github.com/himanshusharma2007/FoodyZone.git",
-      techstack: "React.js, Tailwind CSS, Node.js",
     },
   ];
 

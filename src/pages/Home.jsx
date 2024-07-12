@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import { Download, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 import avtarImg from "../assets/images/file (2).png";
 import { gsap } from "gsap";

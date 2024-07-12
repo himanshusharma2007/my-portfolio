@@ -1,6 +1,10 @@
+import React from "react";
+import { useState } from "react";
+
 import { BsArrowUpRight, BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import imgShopSquire from "../assets/images/shopsquire.png";
+import imgTrackEx from "../assets/images/trackex.png";
 import imgBrightSide from "../assets/images/brightside.png";
 import imgFoodyZone from "../assets/images/foodyzone.jpeg";
 import imgCrypto from "../assets/images/cryptodashboard.png";
@@ -9,7 +13,7 @@ import imgZomato from "../assets/images/zomato.jpg";
 import imgTodo from "../assets/images/todolist.png";
 import imgTicTec from "../assets/images/tictectoe.png";
 import imgMicrosoft from "../assets/images/microsoft-homepage.jpg";
-import { useState } from "react";
+
 
 const AllProjects = () => {
   const items = [
@@ -24,6 +28,17 @@ const AllProjects = () => {
     },
     {
       id: 2,
+      title: "TrackEx - a Expense tracking app",
+      desc: "TrackEx is a user-friendly expense tracking app that simplifies personal and group finance management. It allows users to easily log expenses, split costs with friends, set budgets, and get a clear overview of their spending habits, all without requiring a login . It is here to solve the age-old question: 'Who owes what to whom?'",
+      imgURL: imgTrackEx,
+      liveLink: "https://trackex-sigma.vercel.app/",
+      githubLink:
+        "https://github.com/himanshusharma2007/Expense-Tracking-App.gitt",
+      techstack: "React, JavaScript, Tailwind CSS, Firebase",
+    },
+
+    {
+      id: 3,
       title: "BrightSide - a primary school website",
       desc: "BrightSide is a full-stack primary school website built with React and Firebase. It features user registration and authentication, dynamic pages with scrolling animations, responsive design, and real-time data handling using Firestore. The project showcases the ability to create engaging, interactive web experiences for educational institutions.",
       imgURL: imgBrightSide,
@@ -32,7 +47,7 @@ const AllProjects = () => {
       techstack: "React, JavaScript, CSS3, Tailwind CSS, Firebase",
     },
     {
-      id: 3,
+      id: 4,
       title: "FoodyZone - an online food discovery  platform",
       desc: "FoodyZone is a React-based web application for food discovery and exploration. It features a fully responsive design, meal type filtering options, visually appealing food item cards, and efficient data fetching from a backend API. The project demonstrates skills in creating user-centric designs and integrating front-end with back-end services.",
       imgURL: imgFoodyZone,
@@ -41,7 +56,7 @@ const AllProjects = () => {
       techstack: "React.js, Tailwind CSS, Node.js",
     },
     {
-      id: 4,
+      id: 5,
       title: "Crypto Dashboard - an Cryptocurrency dashboard",
       desc: "This Crypto Dashboard, built with React and Tailwind CSS, offers a responsive design with three main pages: Dashboard, Transactions, and Support. It provides a user-friendly interface for cryptocurrency tracking and management. While currently using static data, the project showcases skills in creating complex, data-driven web applications.",
       imgURL: imgCrypto,
@@ -51,7 +66,7 @@ const AllProjects = () => {
       techstack: "React, Tailwind CSS, JavaScript",
     },
     {
-      id: 5,
+      id: 6,
       title: "FundGrowth - an Mutual fund growth calculator",
       desc: "FundGrowth is a web-based investment growth calculator that helps users estimate their financial growth. It allows input of initial investment, monthly contributions, interest rates, and time horizon to calculate potential returns. The project demonstrates ability to create practical, user-friendly financial tools using web technologies.",
       imgURL: imgFundGrowth,
@@ -60,7 +75,7 @@ const AllProjects = () => {
       techstack: "HTML, CSS, JavaScript, Bootstrap",
     },
     {
-      id: 6,
+      id: 7,
       title: "Zomato clone",
       desc: "This Zomato clone, built with React and Tailwind CSS, replicates the popular restaurant discovery platform. It offers an intuitive interface for exploring restaurants and cuisines. The project showcases skills in recreating complex user interfaces and implementing responsive design for optimal viewing on larger screens.",
       imgURL: imgZomato,
@@ -69,7 +84,7 @@ const AllProjects = () => {
       techstack: "React, Tailwind CSS, JavaScript",
     },
     {
-      id: 7,
+      id: 8,
       title: "Task Managing App",
       desc: "This Todo List project is a task management application designed to help users organize their tasks efficiently and boost productivity. It provides a user-friendly interface for adding, editing, and completing tasks. The project demonstrates skills in creating practical, interactive web applications for everyday use.",
       imgURL: imgTodo,
@@ -78,7 +93,7 @@ const AllProjects = () => {
       techstack: "HTML, CSS, JavaScript",
     },
     {
-      id: 8,
+      id: 9,
       title: "Microsoft Clone",
       desc: "This project is a responsive recreation of the Microsoft website using Tailwind CSS and JavaScript. It faithfully replicates the design and layout of Microsoft's official site, demonstrating skills in modern CSS frameworks and responsive web design. The clone showcases the ability to recreate complex, professional-grade websites.",
       imgURL: imgMicrosoft,
@@ -88,7 +103,7 @@ const AllProjects = () => {
       techstack: "HTML, Tailwind CSS, JavaScript",
     },
     {
-      id: 9,
+      id: 10,
       title: "Tic Tec Toe Game",
       desc: "This classic Tic Tac Toe game is built using HTML, CSS, and JavaScript. It offers a simple yet engaging gaming experience, allowing users to play the timeless strategy game in their web browsers. The project demonstrates skills in creating interactive web-based games and implementing game logic using JavaScript.",
       imgURL: imgTicTec,
